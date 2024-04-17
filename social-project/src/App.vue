@@ -5,7 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
  <div>
-  <h1>Sign In</h1>
+  <h2>Sign In</h2>
   <div>
     <form name="" @submit.prevent="login(username, password)">
     <div>
