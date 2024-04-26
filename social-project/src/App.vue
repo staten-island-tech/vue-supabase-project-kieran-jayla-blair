@@ -1,27 +1,45 @@
 <script setup>
-import Auth from './views/Auth.vue';
-import Account from './views/Account.vue';
-import AboutView from './views/AboutView.vue';
+import { RouterLink, RouterView } from 'vue-router'
+import { ref, onBeforeMount } from 'vue'
+// import Auth from './views/Auth.vue';
+// import Account from './views/Account.vue';
+// import AboutView from './views/AboutView.vue';
+// import HomeView from './views/HomeView.vue';
 </script>
 
 <template>
- <div>
-  <h2>Sign In</h2>
-  <div>
-    <form name="" @submit.prevent="login(username, password)">
-    <div>
-      <label for="username">Username: </label>
-      <input id="username" type="text" v-model="username" />
-    </div>
-    <div>
-      <label for="password">Password: </label>
-      <input id="password" type="password" v-model="password" />
-    </div>
-    </form>
-  </div>
-  <button>Enter</button>
- </div>
+ <header>
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/home">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+        </nav>
+      </div>
+    </header>
 </template>
+
+
+<!-- SIGN IN PAGE CODE -->
+<!-- <template>
+  <div>
+   <h2>Sign In</h2>
+   <div>
+     <form name="" @submit.prevent="login(username, password)">
+     <div>
+       <label for="username">Username: </label>
+       <input id="username" type="text" v-model="username" />
+     </div>
+     <div>
+       <label for="password">Password: </label>
+       <input id="password" type="password" v-model="password" />
+     </div>
+     </form>
+   </div>
+   <button>Enter</button>
+  </div>
+ </template> -->
+
+
 <!-- <script setup>
 import { onMounted, ref } from 'vue'
 import Account from './components/Account.vue'
