@@ -8,18 +8,29 @@ import { ref, onBeforeMount } from 'vue'
 </script>
 
 <template>
- <header>
+  <div id="app">
+    <header>
       <div class="wrapper">
-        <nav>
+        <nav class="nav-links">
           <RouterLink to="/home">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
           <RouterLink to="/auth">Auth</RouterLink>
         </nav>
       </div>
     </header>
+    <RouterView />
+  </div>
 </template>
 
+<style scoped>
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-top: -1rem;
+}
 
+</style>
 <!-- SIGN IN PAGE CODE -->
 <!-- <template>
   <div>
