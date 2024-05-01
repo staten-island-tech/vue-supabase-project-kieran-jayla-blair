@@ -9,6 +9,7 @@ import { ref, onBeforeMount } from 'vue'
 
 <template>
  <header>
+  <h1>Upload Your Own Music</h1>
       <div class="wrapper">
         <nav>
           <RouterLink to="/home">Home</RouterLink>
@@ -72,7 +73,11 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
-
+h1{
+  font-size: 5rem;
+  text-align: center;
+  padding: 3rem;
+}
 .logo {
   display: block;
   margin: 0 auto 2rem;
@@ -129,4 +134,5 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+
 </style>
