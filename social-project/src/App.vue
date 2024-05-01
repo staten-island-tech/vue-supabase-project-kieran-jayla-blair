@@ -13,6 +13,7 @@ import { ref, onBeforeMount } from 'vue'
         <nav>
           <RouterLink to="/home">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/auth">Auth</RouterLink>
         </nav>
       </div>
     </header>
