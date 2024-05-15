@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { ref, onBeforeMount } from 'vue'
+
 // import Auth from './views/Auth.vue';
 // import Account from './views/Account.vue';
 // import AboutView from './views/AboutView.vue';

@@ -4,12 +4,15 @@
 <template>
 <div>
   <h1>HOMEPAGE</h1>
-  <form action="" id="form">
-    <label for="">Search</label>
-    <input type="text" id="songName" />
-    <input type="submit" value="Submit" />
-  </form>
+  <input class="inputField" required type="" placeholder="Search" v-model="Text" />
 </div>
+<input
+          type="submit"
+          class="button block"
+          :value="loading ? 'Loading' : 'Search'"
+          :disabled="loading"
+        />
+
 </template>
 
 

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-// import { supabase } from '../supabase'
+// import { supabase } from 'https://appibxbabgskurddmnjz.supabase.co'
 
 const loading = ref(false)
 const email = ref('')
@@ -27,15 +27,16 @@ const handleLogin = async () => {
   <form class="row flex-center flex" @submit.prevent="handleLogin">
     <div class="col-6 form-widget">
       <h1 class="header">Supabase + Vue 3</h1>
-      <p class="description">Sign in via magic link with your email below</p>
+      <p class="description">Sign in via email and password below</p>
       <div>
         <input class="inputField" required type="email" placeholder="Your email" v-model="email" />
+        <!-- <input class="inputField" required type="password" placeholder="Password" v-model="password" /> -->
       </div>
       <div>
         <input
           type="submit"
           class="button block"
-          :value="loading ? 'Loading' : 'Send magic link'"
+          :value="loading ? 'Loading' : 'Sign In'"
           :disabled="loading"
         />
       </div>
