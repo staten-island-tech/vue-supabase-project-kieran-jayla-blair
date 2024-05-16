@@ -22,6 +22,32 @@ import { RouterLink, RouterView } from 'vue-router'
   </div>
 </template>
 
+<!-- <style>
+export default {
+  name: 'App', 
+
+
+  data() {
+  
+    };
+  },
+  mounted() {
+    this.fetchData()
+  },
+  methods: {
+    async fetchData() {
+      try {
+        const response = await fetch('https://appibxbabgskurddmnjz.supabase.co')
+
+
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+  }
+};
+</style> -->
+
 <style scoped>
 .nav-links {
   display: flex;
