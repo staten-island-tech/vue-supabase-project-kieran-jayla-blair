@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { ref, onBeforeMount } from 'vue'
+
 // import Auth from './views/Auth.vue';
 // import Account from './views/Account.vue';
 // import AboutView from './views/AboutView.vue';
@@ -8,19 +8,32 @@ import { ref, onBeforeMount } from 'vue'
 </script>
 
 <template>
- <header>
-  <h1>Upload Your Own Music</h1>
+
+=======
+  <div id="app">
+    <header>
+>>>>>>> main
       <div class="wrapper">
-        <nav>
+        <nav class="nav-links">
           <RouterLink to="/home">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
           <RouterLink to="/auth">Auth</RouterLink>
         </nav>
       </div>
     </header>
+    <RouterView />
+  </div>
 </template>
 
+<style scoped>
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-top: -1rem;
+}
 
+</style>
 <!-- SIGN IN PAGE CODE -->
 <!-- <template>
   <div>
