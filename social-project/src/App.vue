@@ -1,5 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+// import { supabase } from '@supabase/supabase-js'
+// const supabase = createClient(https://appibxbabgskurddmnjz.supabase.co, eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwcGlieGJhYmdza3VyZGRtbmp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTIxNTAxMzUsImV4cCI6MjAyNzcyNjEzNX0.8xzTcqjZv98GOVy0GkzDPl4HK5d1UVAo8vNLEwRU-xw);
+// const { data: profiles, error } = await supabase.from('profiles').select('*')
+
 
 // import Auth from './views/Auth.vue';
 // import Account from './views/Account.vue';
