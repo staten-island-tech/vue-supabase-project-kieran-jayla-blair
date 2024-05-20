@@ -9,6 +9,21 @@ import { RouterLink, RouterView } from 'vue-router'
 // import Account from './views/Account.vue';
 // import AboutView from './views/AboutView.vue';
 // import HomeView from './views/HomeView.vue';
+import { onMounted, ref } from 'vue'
+import { supabase } from './supabase'
+
+const session = ref()
+
+onMounted(() => {
+  supabase.auth.getSession().then(({ data }) => {
+    session.value = data.session
+  })
+
+  supabase.auth.onAuthStateChange((_, _session) => {
+    session.value = _session
+  })
+})
+
 </script>
 
 <template>
