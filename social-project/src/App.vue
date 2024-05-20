@@ -8,11 +8,8 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-
-=======
   <div id="app">
     <header>
->>>>>>> main
       <div class="wrapper">
         <nav class="nav-links">
           <RouterLink to="/home">Home</RouterLink>
@@ -31,6 +28,7 @@ import { RouterLink, RouterView } from 'vue-router'
   justify-content: space-between;
   font-size: 20px;
   margin-top: -1rem;
+  text-align: center
 }
 
 </style>
