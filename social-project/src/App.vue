@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
 // import AboutView from './views/AboutView.vue';
 // import HomeView from './views/HomeView.vue';
 import { onMounted, ref } from 'vue'
-import { supabase } from './supabase'
+// import { supabase } from './supabase'
 
 const session = ref()
 
