@@ -1,17 +1,21 @@
 <script setup>
+import { ref } from 'vue';
+import { supabase } from '@/lib/supabase';
 async function signUp(){
   const { data, error } = await supabase.auth.signUp({
-    email: '',
-    password: 'example-password',
+    email: email.value,
+    password: password.value,
   })
 }
-const email = ref()
+const email = ref("")
+const password = ref("")
 </script>
 
 <template>
-  <form action="">
-    <input type="">
-  <input type="text">
+  <form action="" >
+    <button @click.prevent="signUp">sign up</button>
+    <input type="" v-model="email">
+  <input type="password" v-model="password">
 </form>
 <div>
   <h1>HOMEPAGE</h1>
