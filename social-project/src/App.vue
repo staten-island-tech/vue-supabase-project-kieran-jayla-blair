@@ -5,6 +5,15 @@ import { RouterLink, RouterView } from 'vue-router'
 // const { data: profiles, error } = await supabase.from('profiles').select('*')
 
 
+import { supabase } from './lib/supabase';
+
+async function test() {
+  let { data: profiles, error } = await supabase
+  .from('profiles')
+  .select('*')
+console.log(profiles)        
+}
+test()
 // import Auth from './views/Auth.vue';
 // import Account from './views/Account.vue';
 // import AboutView from './views/AboutView.vue';
@@ -185,4 +194,4 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-</style>
+</style>./lib/supabase
