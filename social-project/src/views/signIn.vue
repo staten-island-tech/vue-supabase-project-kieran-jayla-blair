@@ -1,7 +1,7 @@
 <template>
     <div>
         <form action="" >
-    <button @click.prevent="signUp">sign up</button>
+    <button @click.prevent="signIn">sign up</button>
     <input type="" v-model="email">
   <input type="password" v-model="password">
 </form>
@@ -10,9 +10,10 @@
 
 <script setup>
 import { ref } from 'vue';
-
+import { supabase } from '@/lib/supabase';
+import
 async function signIn(){
-  const { data, error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signInWithPassword({
     email: email.value,
     password: password.value,
   })

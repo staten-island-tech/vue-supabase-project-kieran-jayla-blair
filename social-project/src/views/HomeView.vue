@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import { RouterView, RouterLink } from 'vue-router';
 import { supabase } from '@/lib/supabase';
 async function signUp(){
   const { data, error } = await supabase.auth.signUp({
@@ -18,6 +19,7 @@ const password = ref("")
   <input type="password" v-model="password">
 </form>
 <div>
+  <button><RouterLink to="/signIn">Sign In</RouterLink></button>
   <h1>HOMEPAGE</h1>
   <input class="inputField" required type="" placeholder="Search" v-model="Text" />
 </div>
@@ -27,7 +29,7 @@ const password = ref("")
           :value="loading ? 'Loading' : 'Search'"
           :disabled="loading"
         />
-
+<RouterView/>
 </template>
 
 
