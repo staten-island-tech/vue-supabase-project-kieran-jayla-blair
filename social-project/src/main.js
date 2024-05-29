@@ -5,6 +5,8 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+// import { supabase } from '@supabase/supabase-js'
+
 
 const app = createApp(App)
 

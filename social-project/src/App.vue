@@ -1,10 +1,38 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+// import { supabase } from '@supabase/supabase-js'
+// const supabase = createClient(https://appibxbabgskurddmnjz.supabase.co, eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwcGlieGJhYmdza3VyZGRtbmp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTIxNTAxMzUsImV4cCI6MjAyNzcyNjEzNX0.8xzTcqjZv98GOVy0GkzDPl4HK5d1UVAo8vNLEwRU-xw);
+// const { data: profiles, error } = await supabase.from('profiles').select('*')
 
+
+import { supabase } from './lib/supabase';
+
+async function test() {
+  let { data: profiles, error } = await supabase
+  .from('profiles')
+  .select('*')
+console.log(profiles)        
+}
+test()
 // import Auth from './views/Auth.vue';
 // import Account from './views/Account.vue';
 // import AboutView from './views/AboutView.vue';
 // import HomeView from './views/HomeView.vue';
+import { onMounted, ref } from 'vue'
+// import { supabase } from './supabase'
+
+const session = ref()
+
+onMounted(() => {
+  supabase.auth.getSession().then(({ data }) => {
+    session.value = data.session
+  })
+
+  supabase.auth.onAuthStateChange((_, _session) => {
+    session.value = _session
+  })
+})
+
 </script>
 
 <template>
@@ -21,6 +49,32 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterView />
   </div>
 </template>
+
+<!-- <style>
+export default {
+  name: 'App', 
+
+
+  data() {
+  
+    };
+  },
+  mounted() {
+    this.fetchData()
+  },
+  methods: {
+    async fetchData() {
+      try {
+        const response = await fetch('https://appibxbabgskurddmnjz.supabase.co')
+
+
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+  }
+};
+</style> -->
 
 <style scoped>
 .nav-links {
@@ -145,5 +199,9 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+<<<<<<< HEAD
 
 </style>
+=======
+</style>./lib/supabase
+>>>>>>> main
