@@ -82,6 +82,7 @@ export default {
   justify-content: space-between;
   font-size: 20px;
   margin-top: -1rem;
+  text-align: center
 }
 
 </style>
@@ -137,7 +138,11 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
-
+h1{
+  font-size: 5rem;
+  text-align: center;
+  padding: 3rem;
+}
 .logo {
   display: block;
   margin: 0 auto 2rem;
@@ -194,4 +199,9 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+<<<<<<< HEAD
+
+</style>
+=======
 </style>./lib/supabase
+>>>>>>> main
