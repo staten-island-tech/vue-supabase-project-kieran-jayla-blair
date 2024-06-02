@@ -14,7 +14,7 @@
       </div>
     
       <div>    <button class='ghost-round full-width' @click.prevent="signIn"><RouterLink to="/homepage">Sign in</RouterLink></button>
-        <RouterLink to="/signUp">Don't have an account?Sign Up</RouterLink>
+        <button><RouterLink to="/home">Don't have an account? Sign Up</RouterLink></button>
 
     
     </div>
