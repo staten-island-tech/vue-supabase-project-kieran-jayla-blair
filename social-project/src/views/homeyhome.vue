@@ -1,10 +1,54 @@
 <template>
     <div>
-         
+      <h1>Table Data</h1>
+      <ul>
+        <li v-for="item in data" :key="item.id">
+          {{ item.column1 }} - {{ item.column2 }}
+        </li>
+      </ul>
     </div>
-</template>
+    <!-- this part might work -->
+    <!-- <div>
+    <h1>Other Users</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>username</th>
+          <th>bio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in data" :key="item.id">
+          <td>{{ item.id }}</td>
+          <td>{{ item.column1 }}</td>
+          <td>{{ item.column2 }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+  </template>
+  
+  <script setup>
+  import { ref, onMounted } from 'vue'
+  import { supabase } from '@/lib/supabase'
+  
+  const data = ref([])
+  
+  onMounted(async () => {
+    const { data: fetchedData, error } = await supabase
+      .from('profiles') 
+      .select('*')
+  
+    if (error) {
+      console.error(error)
+    } else {
+      data.value = fetchedData
+    }
+  })
 
-<script setup>
+
+
+
 // const { data, error } = await supabase
 //   .from('we put the name of the user folder here')
 //   .select()
