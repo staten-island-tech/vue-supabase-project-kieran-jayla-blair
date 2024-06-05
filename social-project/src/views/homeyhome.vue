@@ -4,7 +4,7 @@
     <input type="text" v-model="searchQuery" placeholder="search" />
     <div class="grid-container">
       <div v-for="item in filteredData" :key="item.id" class="grid-item">
-        {{ item.username }} - {{ item.bio }}
+        {{ item.img }} - {{ item.username }} - {{ item.bio }}
         <!-- These are null values for now so nothing is displayed -->
         <button @click="follow(item)">follow</button>
       </div>
@@ -69,3 +69,9 @@ input[type="text"] {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 </style>
+
+<!-- List of things I need to add
+working follower button
+working post display image alongside username and bio
+add birthday display
+make sure image code gets put as a link not just img text->
