@@ -27,6 +27,11 @@ const router = createRouter({
       name: 'homePage',
       component: () => import('../views/homeyhome.vue')
     },
+    {
+      path: '/post',
+      name: 'post',
+      component: () => import('../views/postsbutton.vue')
+    },
   ]
 })
 

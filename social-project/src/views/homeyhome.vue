@@ -1,46 +1,71 @@
 <template>
   <div>
-    <h1>Home Page</h1>
-    <input type="text" v-model="searchQuery" placeholder="search" />
+    <input type="text" v-model="searchQuery" placeholder="Search" />
     <div class="grid-container">
-      <div v-for="item in filteredData" :key="item.id" class="grid-item">
-        {{ item.username }} - {{ item.bio }}
-        <!-- These are null values for now so nothing is displayed -->
-        <button @click="follow(item)">follow</button>
+      <div v-for="(post, key) in filteredData" :key="key" class="grid-item">
+        <button @click="toggleLike(post)">
+          <input type="checkbox" :id="`checkbox-${key}`" />
+          <label :for="`checkbox-${key}`">{{ post.caption }}</label>
+        </button>
+        <span>Likes: {{ post.likes }}</span>
+        <img :src="post.image" alt="Post image" v-if="post.image" />
       </div>
     </div>
   </div>
+  <button><RouterLink to="/post">post</RouterLink></button>
+  <RouterView></RouterView>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { supabase } from '@/lib/supabase'
+import { ref, computed, onMounted } from 'vue';
+import { supabase } from '@/lib/supabase';
+import { RouterView, RouterLink } from 'vue-router';
 
-const data = ref([])
-const searchQuery = ref('')
+const data = ref([]);
+const searchQuery = ref('');
 
-onMounted(async () => {
-  const { data: fetchedData, error } = await supabase
-    .from('profiles')
-    .select('*')
+async function fetchData() {
+  const { data: postData, error: postError } = await supabase
+    .from('post1')
+    .select('*');
 
-  if (error) {
-    console.error(error)
+  if (postError) {
+    console.error(postError);
   } else {
-    data.value = fetchedData
+    data.value = postData;
   }
-})
+
+  const { data: profilesData, error: profilesError } = await supabase
+    .from('profiles')
+    .select('*');
+
+  if (profilesError) {
+    console.error(profilesError);
+  } else {
+    data.value = [...data.value, ...profilesData];
+  }
+}
+
+onMounted(fetchData);
 
 const filteredData = computed(() => {
   return data.value.filter(item => {
-    const searchLower = searchQuery.value.toLowerCase()
+    const searchLower = searchQuery.value.toLowerCase();
     return (
-      item.username.toLowerCase().includes(searchLower)
-    )
-  })
-})
-// follow code goes here
-// const follow = async (item) => {
+      item.username.toLowerCase().includes(searchLower) ||
+      item.bio.toLowerCase().includes(searchLower)
+    );
+  });
+});
+
+function toggleLike(post) {
+  post.liked = !post.liked;
+  if (post.liked) {
+    post.likes++;
+  } else {
+    post.likes--;
+  }
+}
 </script>
 
 <style scoped>
