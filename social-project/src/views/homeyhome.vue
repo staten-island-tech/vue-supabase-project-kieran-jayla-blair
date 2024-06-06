@@ -1,20 +1,24 @@
 <template>
   <div>
-    <h1>Home Page</h1>
+  
     <input type="text" v-model="searchQuery" placeholder="search" />
     <div class="grid-container">
       <div v-for="item in filteredData" :key="item.id" class="grid-item">
         {{ item.username }} - {{ item.bio }}
         <!-- These are null values for now so nothing is displayed -->
         <button @click="follow(item)">follow</button>
+        
       </div>
     </div>
   </div>
+  <button><RouterLink to="/post">post</RouterLink></button>
+<RouterView></RouterView>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { supabase } from '@/lib/supabase'
+import { RouterView, RouterLink } from 'vue-router';
 
 const data = ref([])
 const searchQuery = ref('')
@@ -39,6 +43,8 @@ const filteredData = computed(() => {
     )
   })
 })
+
+
 // follow code goes here
 // const follow = async (item) => {
 </script>
