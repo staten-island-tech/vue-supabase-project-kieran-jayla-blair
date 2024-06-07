@@ -199,9 +199,4 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-<<<<<<< HEAD
-
 </style>
-=======
-</style>./lib/supabase
->>>>>>> main
