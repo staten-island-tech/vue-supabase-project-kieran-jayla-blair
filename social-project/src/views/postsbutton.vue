@@ -1,5 +1,8 @@
 <template>
     <div>
+        <nav>
+            <RouterLink to="/homePage">Home</RouterLink>
+        </nav>
         <form action="">
             <input type="text" v-model="caption" placeholder="Caption" />
             <input type="text" v-model="image" placeholder="Image URL" />

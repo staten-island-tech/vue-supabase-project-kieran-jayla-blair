@@ -114,8 +114,8 @@ button:focus {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-  font-size: 19px;
-  font-size: 1.2rem;
+  font-size: 24px;
+  font-size: 1.5rem;
   font-family: roboto;
   font-weight: 300;
   line-height: 2.5em;
@@ -141,11 +141,16 @@ button:focus {
   font-weight: 300;
   letter-spacing: 0px;
   letter-spacing: 0.02rem;
-  font-size: 19px;
-  font-size: 1.2rem;
+  font-size: 24px;
+  font-size: 1.8rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.65);
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+}
+
+.input-line[type="email"],
+.input-line[type="password"] {
+  font-size: 24px; 
 }
 
 .full-width {

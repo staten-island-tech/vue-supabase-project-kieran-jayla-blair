@@ -40,10 +40,10 @@ onMounted(() => {
     <header>
       <div class="wrapper">
         <nav class="nav-links">
-          <RouterLink to="/home">Home</RouterLink>
+          <!-- <RouterLink to="/home">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
           <RouterLink to="/auth">Auth</RouterLink>
-          <RouterLink to="/homePage">homee</RouterLink>
+          <RouterLink to="/homePage">homee</RouterLink> -->
         </nav>
 
       </div>
