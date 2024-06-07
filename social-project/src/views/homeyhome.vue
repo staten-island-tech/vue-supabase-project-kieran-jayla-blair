@@ -1,7 +1,9 @@
 <template>
   <div>
-    <button><RouterLink to="/post">Post</RouterLink></button>
-    <input type="text" v-model="searchQuery" placeholder="Search" />
+    <div class="search-button-container">
+      <button class="post-button"><RouterLink to="/post">Post</RouterLink></button>
+      <input type="text" v-model="searchQuery" placeholder="Search" class="search-bar" />
+    </div>
     <div class="grid-container">
       <div v-for="(post, key) in filteredData" :key="key" class="grid-item">
         <div class="post-content">
@@ -76,6 +78,37 @@ async function toggleLike(post) {
 </script>
 
 <style>
+.search-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px; /* Add margin if needed */
+  gap: 16px; /* Adjust the gap between elements */
+}
+
+.post-button {
+  padding: 12px 24px; 
+  font-size: 16px; 
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.post-button:hover {
+  background-color: #ffe9e9; 
+  transition: all 0.8s;
+}
+
+.search-bar {
+  width: 400px; 
+  padding: 12px; 
+  font-size: 16px; 
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
 .grid-container {
   display: flex;
   flex-wrap: wrap;
@@ -86,7 +119,7 @@ async function toggleLike(post) {
   flex: 1 1 calc(33.333% - 16px);
   box-sizing: border-box;
   padding: 16px;
-  background-color: #f9f9f9;
+  background-color: #ffe9e9;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -102,8 +135,12 @@ async function toggleLike(post) {
 .like-button {
   display: flex;
   align-items: center;
+  transition: all 0.5s;
+  text-decoration: solid;
 }
-
+.like-button:hover{
+  transform: scale(1.25);
+}
 img {
   max-width: 100%;
   border-radius: 8px;
