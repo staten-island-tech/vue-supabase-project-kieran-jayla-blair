@@ -43,38 +43,16 @@ onMounted(() => {
           <RouterLink to="/home">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
           <RouterLink to="/auth">Auth</RouterLink>
+          <RouterLink to="/homePage">homee</RouterLink>
         </nav>
+
       </div>
     </header>
     <RouterView />
   </div>
 </template>
 
-<!-- <style>
-export default {
-  name: 'App', 
 
-
-  data() {
-  
-    };
-  },
-  mounted() {
-    this.fetchData()
-  },
-  methods: {
-    async fetchData() {
-      try {
-        const response = await fetch('https://appibxbabgskurddmnjz.supabase.co')
-
-
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-  }
-};
-</style> -->
 
 <style scoped>
 .nav-links {
@@ -85,55 +63,6 @@ export default {
   text-align: center
 }
 
-</style>
-<!-- SIGN IN PAGE CODE -->
-<!-- <template>
-  <div>
-   <h2>Sign In</h2>
-   <div>
-     <form name="" @submit.prevent="login(username, password)">
-     <div>
-       <label for="username">Username: </label>
-       <input id="username" type="text" v-model="username" />
-     </div>
-     <div>
-       <label for="password">Password: </label>
-       <input id="password" type="password" v-model="password" />
-     </div>
-     </form>
-   </div>
-   <button>Enter</button>
-  </div>
- </template> -->
-
-
-<!-- <script setup>
-import { onMounted, ref } from 'vue'
-import Account from './components/Account.vue'
-import Auth from './components/Auth.vue'
-import { supabase } from './supabase'
-
-const session = ref()
-
-onMounted(() => {
-  supabase.auth.getSession().then(({ data }) => {
-    session.value = data.session
-  })
-
-  supabase.auth.onAuthStateChange((_, _session) => {
-    session.value = _session
-  })
-})
-</script>
-
-<template>
-  <div class="container" style="padding: 50px 0 100px 0">
-    <Account v-if="session" :session="session" />
-    <Auth v-else />
-  </div>
-</template> -->
-
-<style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;

@@ -7,17 +7,16 @@
       <div class='welcome'>Hello There!</div>
 
       <div class='input-fields'>
-        <!-- <input type='text' placeholder='Username' class='input-line full-width'></input> -->
         <input v-model="email" type='email' placeholder='Email' class='input-line full-width'></input>
         <input v-model="password" type='password' placeholder='Password' class='input-line full-width'></input>
        
       </div>
     
-      <div>    <button class='ghost-round full-width' @click.prevent="signIn"><RouterLink to="/homepage">Sign in</RouterLink></button>
+       <button class='ghost-round full-width' @click.prevent="signIn"><RouterLink to="/homepage">Sign in</RouterLink></button>
         <button><RouterLink to="/home">Don't have an account? Sign Up</RouterLink></button>
 
     
-    </div>
+  
   </div>
 </div>
 </div>
@@ -41,7 +40,18 @@ const password = ref("")
 
 
 <style scoped>
+h1 {
+  text-align: center;
+ margin-top: 1rem;
+}
 
+#form {
+  text-align: center;
+  font-size: 1.125rem;
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
 body,
 html {
   margin: 0;

@@ -29,7 +29,7 @@ const password = ref("")
       </div>
     
       <div><button class='ghost-round full-width' @click.prevent="signUp">Create Account</button></div>
-      <button><RouterLink to="/signIn">Already have an account? Sign In</RouterLink></button>
+      <button><RouterLink style="text-decoration: none; color: inherit;" to="/signIn">Already have an account? Sign In</RouterLink></button>
 
     
     </div>
