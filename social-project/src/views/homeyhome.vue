@@ -75,61 +75,6 @@ async function toggleLike(post) {
 }
 </script>
 
-<!-- <script setup>
-import { ref, computed, onMounted } from 'vue';
-import { supabase } from '@/lib/supabase';
-import { RouterView, RouterLink } from 'vue-router';
-
-const data = ref([]);
-const searchQuery = ref('');
-
-async function fetchPosts() {
-  const { data: postData, error: postError } = await supabase
-    .from('post1')
-    .select('*');
-
-  if (postError) {
-    console.error(postError);
-  } else {
-    data.value = postData.map(post => ({
-      ...post,
-      liked: post.liked || false, 
-    }));
-  }
-}
-
-async function fetchData() {
-  await fetchPosts();
-}
-
-onMounted(fetchData);
-
-const filteredData = computed(() => {
-  const searchLower = searchQuery.value.toLowerCase();
-  return data.value.filter(item => {
-    return item.caption.toLowerCase().includes(searchLower);
-  });
-});
-
-async function toggleLike(post) {
-  const updatedLiked = !post.liked;
-  const updatedLikes = updatedLiked ? post.likes + 1 : post.likes - 1;
-  const { error: postError } = await supabase
-    .from('post1')
-    .update({ liked: updatedLiked, likes: updatedLikes })
-    .eq('id', post.id);
-
-  if (postError) {
-    console.error(postError);
-    return;
-  }
-  const index = data.value.findIndex(p => p.id === post.id);
-  if (index !== -1) {
-    data.value[index] = { ...post, liked: updatedLiked, likes: updatedLikes };
-  }
-}
-</script> -->
-
 <style>
 .grid-container {
   display: flex;

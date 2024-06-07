@@ -7,7 +7,6 @@
       <div class='welcome'>Hello There!</div>
 
       <div class='input-fields'>
-        <!-- <input type='text' placeholder='Username' class='input-line full-width'></input> -->
         <input v-model="email" type='email' placeholder='Email' class='input-line full-width'></input>
         <input v-model="password" type='password' placeholder='Password' class='input-line full-width'></input>
        
