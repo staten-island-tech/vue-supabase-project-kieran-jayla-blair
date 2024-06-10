@@ -1,25 +1,29 @@
 <template>
- <div class='bold-line'></div>
-<div class='container'>
-  <div class='window'>
-    <div class='overlay'></div>
-    <div class='content'>
-      <div class='welcome'>Hello There!</div>
+  <div class='bold-line'></div>
+  <div class='container'>
+    <div class='window'>
+      <div class='overlay'></div>
+      <div class='content'>
+        <div class='welcome'>Hello There!</div>
 
-      <div class='input-fields'>
-        <input v-model="email" type='email' placeholder='Email' class='input-line full-width'></input>
-        <input v-model="password" type='password' placeholder='Password' class='input-line full-width'></input>
-       
+        <div class='input-fields'>
+          <input v-model="email" type='email' placeholder='Email' class='input-line full-width'></input>
+          <input v-model="password" type='password' placeholder='Password' class='input-line full-width'></input>
+
+        </div>
+
+        <button class='ghost-round full-width' @click.prevent="signIn">
+          <RouterLink to="/homepage">Sign in</RouterLink>
+        </button>
+        <button>
+          <RouterLink to="/home">Don't have an account? Sign Up</RouterLink>
+        </button>
+
+
+
       </div>
-    
-       <button class='ghost-round full-width' @click.prevent="signIn"><RouterLink to="/homepage">Sign in</RouterLink></button>
-        <button><RouterLink to="/home">Don't have an account? Sign Up</RouterLink></button>
-
-    
-  
+    </div>
   </div>
-</div>
-</div>
 
 
 </template>
@@ -36,6 +40,15 @@ async function signIn(){
 }
 const email = ref("")
 const password = ref("")
+// const authStore = useAuthStore();
+// const router = useRouter();
+
+// async function handleSignIn() {
+//   await authStore.signIn(email.value, password.value);
+//   if (authStore.user) {
+//     router.push('/home');
+//   }
+// }
 </script>
 
 

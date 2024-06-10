@@ -11,7 +11,7 @@ async function test() {
   let { data: profiles, error } = await supabase
   .from('profiles')
   .select('*')
-console.log(profiles)        
+// console.log(profiles)        
 }
 test()
 // import Auth from './views/Auth.vue';
